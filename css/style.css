@@ -1,0 +1,315 @@
+:root {
+    --primary-color: #6C63FF; 
+    --secondary-color: #FF6584; 
+    --accent-color: #00C9A7; 
+    --dark-color: #1E1E2F; 
+    --light-color: #FAFAFA; 
+    --body-bg: #F5F7FF;
+    --card-bg: #FFFFFF;
+    --gradient: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+}
+
+/* === Base Styles === */
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: 'Poppins', system-ui, sans-serif;
+    background-color: var(--body-bg);
+    color: var(--dark-color);
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease;
+}
+
+main {
+    flex: 1;
+}
+
+h1, h2, h3, h4, h5, h6 { 
+    font-weight: 600; 
+}
+
+/* === Buttons === */
+.btn-gradient {
+    background-image: var(--gradient);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 0.6rem 1.2rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 20px rgba(108, 99, 255, 0.35);
+}
+.btn-gradient:hover {
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(255, 101, 132, 0.45);
+}
+
+/* === Navbar (compact, glassy, colorful) === */
+.navbar {
+    height: 75px;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+    padding: 0.5rem 1rem;
+    box-shadow: 0 4px 20px rgba(108, 99, 255, 0.15);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+.navbar:hover {
+    box-shadow: 0 8px 25px rgba(255, 101, 132, 0.25);
+}
+.navbar-brand {
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--primary-color) !important;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+.navbar-nav {
+    align-items: center;
+}
+.nav-link {
+    font-weight: 500;
+    color: #444 !important;
+    margin-left: 15px;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    border-radius: 6px;
+    padding: 0.4rem 0.7rem;
+}
+.nav-link:hover {
+    color: #fff !important;
+    background: var(--gradient);
+    box-shadow: 0 4px 10px rgba(108, 99, 255, 0.3);
+    transform: translateY(-2px);
+}
+
+/* === Hero Banner === */
+.hero-banner {
+    background: linear-gradient(120deg, #6C63FF, #00C9A7);
+    color: white;
+    padding: 5rem 0;
+    text-align: center;
+    border-radius: 0 0 40px 40px;
+    margin-bottom: 2rem;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+}
+.hero-banner h1 {
+    font-size: 2.8rem;
+    letter-spacing: 1px;
+}
+.hero-banner p {
+    font-size: 1.1rem;
+    margin-top: 0.6rem;
+}
+
+/* === Cards === */
+.custom-card {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 6px 20px rgba(108,99,255,0.15);
+    transition: all 0.3s ease;
+    overflow: hidden;
+    background-color: var(--card-bg);
+}
+.custom-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 30px rgba(255,101,132,0.25);
+}
+
+/* ADJUSTMENT: Reduce the image size by changing the aspect-ratio */
+.custom-card .card-img-top {
+    border-radius: 15px 15px 0 0;
+    /* Changed from 1 / 1 (square) to 4 / 3 (shorter) or 16 / 9 for a shorter, landscape look */
+    /* To make the images appear shorter, I'll use 4 / 3, which is more common for product images. */
+    aspect-ratio: 4 / 3; 
+    object-fit: contain; /* Use 'contain' to show the full image without cropping/stretching */
+    padding: 20px; /* Add padding to reduce the image size visually */
+}
+/* END ADJUSTMENT */
+
+.custom-card .card-body {
+    text-align: center;
+}
+
+/* === Form Container === */
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 100px);
+    background: linear-gradient(180deg, #F5F7FF 0%, #E8ECFF 100%);
+    padding: 2rem;
+}
+.form-container .card {
+    width: 100%;
+    max-width: 420px;
+    border-radius: 16px;
+    box-shadow: 0 8px 30px rgba(108,99,255,0.1);
+}
+
+/* === Footer === */
+.footer {
+    background: linear-gradient(90deg, #1E1E2F, #2E2E46);
+    color: #E3E7FF;
+    text-align: center;
+    font-size: 0.95rem;
+    letter-spacing: 0.4px;
+    padding: 1.5rem 0;
+    border-top: 3px solid var(--primary-color);
+    box-shadow: 0 -3px 20px rgba(108,99,255,0.15);
+    margin-top: auto;
+}
+
+.footer p {
+    margin: 0;
+}
+
+/* === Hero Slider === */
+.hero-slider {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 10px 35px rgba(0,0,0,0.12);
+    height: 420px;
+}
+.hero-slider .slides {
+    display: flex;
+    width: 400%;
+    height: 100%;
+    animation: slideAnim 16s infinite;
+}
+.hero-slider .slide {
+    width: 100%;
+    flex: 0 0 100%;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+.hero-slider .overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0,0,0,0.3), rgba(0,0,0,0.6));
+    display:flex;
+    align-items:center;
+    justify-content:flex-start;
+    padding-left:6%;
+    color: #fff;
+}
+.hero-slider h1 {
+    font-size: 2.6rem;
+    margin: 0 0 10px 0;
+    letter-spacing: 0.8px;
+}
+.hero-slider p {
+    font-size: 1.1rem;
+    margin: 0;
+    max-width: 600px;
+}
+.hero-slider:hover .slides { animation-play-state: paused; }
+
+@keyframes slideAnim {
+    0%   { transform: translateX(0%); }
+    20%  { transform: translateX(0%); }
+    25%  { transform: translateX(-100%); }
+    45%  { transform: translateX(-100%); }
+    50%  { transform: translateX(-200%); }
+    70%  { transform: translateX(-200%); }
+    75%  { transform: translateX(-300%); }
+    95%  { transform: translateX(-300%); }
+    100% { transform: translateX(0%); }
+}
+
+/* === Orders Section === */
+.orders-section {
+  max-width: 1000px;
+  margin: 100px auto;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 6px 25px rgba(108,99,255,0.15);
+  padding: 35px;
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+.orders-section h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: var(--primary-color);
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.orders-section table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 10px;
+}
+
+.orders-section th {
+  background: var(--gradient);
+  color: #fff;
+  text-align: center;
+  padding: 12px;
+  border-radius: 8px 8px 0 0;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.orders-section td {
+  background-color: #f3f6ff;
+  text-align: center;
+  padding: 12px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.orders-section tr:hover td {
+  transform: scale(1.02);
+  background: #eef2ff;
+  box-shadow: 0 4px 15px rgba(108,99,255,0.1);
+}
+
+.status {
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.status.delivered {
+  color: #22c55e;
+}
+
+.status.pending {
+  color: #facc15;
+}
+
+.status.cancelled {
+  color: #ef4444;
+}
+
+.btn-back {
+  display: inline-block;
+  margin-top: 30px;
+  background: var(--gradient);
+  color: #fff;
+  font-weight: 600;
+  padding: 10px 22px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(108,99,255,0.25);
+}
+
+.btn-back:hover {
+  background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(108,99,255,0.3);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}

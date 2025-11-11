@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment - Online Store</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top">
+        <div class="container"><a class="navbar-brand" href="index.html">Online Store</a><ul class="navbar-nav ms-auto"><li class="nav-item"><a class="nav-link" href="orders.html">Orders</a></li><li class="nav-item"><a class="nav-link" href="profile.html">Profile</a></li></ul></div>
+    </nav>
+    <main class="container my-5">
+        <div class="row g-4">
+            <div class="col-md-7">
+                <div class="card custom-card p-4">
+                    <h4 class="mb-4">Payment Options</h4>
+                    <div class="form-check"><input type="radio" name="payment" id="pay1" class="form-check-input"><label for="pay1" class="form-check-label">Credit Card</label></div>
+                    <div class="form-check"><input type="radio" name="payment" id="pay2" class="form-check-input"><label for="pay2" class="form-check-label">PayPal</label></div>
+                    <div class="form-check"><input type="radio" name="payment" id="pay3" class="form-check-input"><label for="pay3" class="form-check-label">Bank Transfer</label></div>
+                    <hr>
+                    <div class="mb-3"><label class="form-label">Amount</label><input type="text" class="form-control" value="Rs 544.00" readonly></div>
+                    <button class="btn btn-gradient w-100">Pay Now</button>
+                </div>
+            </div>
+            <div class="col-md-5">
+                <div class="card custom-card p-4">
+                    <h4 class="mb-3">Order Tracking</h4>
+                    <p><strong>Order ID:</strong> #12345</p>
+                    <p><strong>Status:</strong> Awaiting Payment</p>
+                    <p><strong>Total:</strong> Rs 544.00</p>
+                </div>
+                <div class="card custom-card p-4 mt-4">
+                    <h5 class="mb-3">Leave a Review</h5>
+                    <textarea class="form-control mb-2" rows="3" placeholder="Write a review..."></textarea>
+                    <button class="btn btn-gradient">Submit Review</button>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="container text-center">
+            <p>Contact Info | &copy; 2025 Online Store</p>
+        </div>
+    </footer>
+    
+</body>
+</html>
